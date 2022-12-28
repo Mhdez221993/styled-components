@@ -1,3 +1,4 @@
-import { StyledButton } from "./Button.styles";
+import { FancyButton, StyledButton } from "./Button.styles";
 
+export { FancyButton };
 export default StyledButton;
