@@ -12,6 +12,11 @@ export const StyledButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   transition: 0.5s all ease-out;
+  &:hover {
+    background-color: ${(props) =>
+      props.variant !== "outlined" ? "#fff" : "#4caf50"};
+    color: ${(props) => (props.variant !== "outlined" ? "#4caf50" : "#fff")};
+  }
 `;
 
 export const FancyButton = styled(StyledButton)`
