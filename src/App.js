@@ -7,8 +7,8 @@ import {
   SubmitButton,
 } from "./components/Button/Button.styles";
 import StyledButton, { FancyButton } from "./components/Button/Button";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 
-import { ThemeProvider } from "styled-components";
 import logo from "./logo.svg";
 
 const theme = {
@@ -20,11 +20,19 @@ const theme = {
     primary: "#fff",
     text: "#000",
   },
+  fontFamily: "Segoe UI",
 };
+
+const GlobalStyle = createGlobalStyle`
+  button {
+    font-family: ${(props) => props.theme.fontFamily};
+  }
+`;
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <div className="App">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
